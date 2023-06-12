@@ -16,7 +16,7 @@ afterEvaluate{
 
                 groupId= "com.github.megan-dunham"
                 artifactId= "Demo-Lib"
-                version= "1.05"
+                version= "1.0"
 
                 //artifacts sourceJar
                 //artifacts packageJavadoc
