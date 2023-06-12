@@ -14,7 +14,7 @@ afterEvaluate{
             mavenJava(MavenPublication){
                 from components.java
 
-                groupId= "om.github.megan-dunham"
+                groupId= "com.github.megan-dunham"
                 artifactId= "Demo-Lib"
                 version= "1.05"
 
