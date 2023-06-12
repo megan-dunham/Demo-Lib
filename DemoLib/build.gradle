@@ -1,0 +1,42 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+afterEvaluate{
+    publishing {
+        publications {
+            mavenJava(MavenPublication){
+                from components.java
+
+                groupId= "com.example.demoLib"
+                artifactId= "demoLib"
+                version= "1.0"
+
+                //artifacts sourceJar
+                //artifacts packageJavadoc
+            }
+        }
+    }
+}
+
+javadoc{
+    source= sourceSets.main.allJava
+    classpath= configurations.compileClasspath
+    options.setMemberLevel JavadocMemberLevel.PUBLIC
+}
+
+task sourceJar(type: Jar){
+    archiveClassifier.set("source")
+    from sourceSets.main.allJava
+}
+
+task packageJavadoc(type: Jar){
+    archiveClassifier.set("javadoc")
+    from javadoc
+}
